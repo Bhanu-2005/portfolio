@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../Desktop/python-projects"
+		},
+		{
+			"path": "../../../Desktop/web-sql-projects"
+		},
+		{
+			"path": "../../../Desktop/django"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

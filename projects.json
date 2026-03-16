@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Style hub Modern E-commerce Platform",
+        "description": "Architected a full-stack e-commerce platform leveraging Django and PostgreSQL to facilitate seamless product exploration, cart operations, wish list handling, and simulated transactions. Designed responsive UI enhancements and implemented client-side filtering logic.",
+        "tech": ["Django", "PostgreSQL", "JavaScript", "HTML", "CSS"],
+        "link": "https://github.com/Bhanu-2005",
+        "icon": "fas fa-shopping-cart"
+    },
+    {
+        "title": "Meteorite Landing Data Dashboard",
+        "description": "Executed comprehensive data examination of global meteorite records using Power BI to reveal chronological and spatial impact trends. Engineered data pipelines through Power Query, structured relational data models, and formulated DAX-driven metrics.",
+        "tech": ["Power BI", "Power Query", "DAX"],
+        "link": "https://github.com/Bhanu-2005",
+        "icon": "fas fa-chart-bar"
+    },
+    {
+        "title": "Sudoku Game (C++)",
+        "description": "Engineered a fully functional Sudoku game in C++ using object-oriented principles, modular design, and structured gameplay flow. Implemented efficient validation mechanisms for rows, columns, and sub-grids.",
+        "tech": ["C++", "OOP"],
+        "link": "https://github.com/Bhanu-2005",
+        "icon": "fas fa-gamepad"
+    }
+]

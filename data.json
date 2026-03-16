@@ -1,0 +1,103 @@
+{
+    "hero": {
+        "name": "Sangula Bhanu Teja",
+        "title": "Data Scientist",
+        "description": "Transforming complex datasets into actionable insights and scalable solutions.",
+        "image": "bhanu cv imGE.jpg",
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/bhanuteja9",
+            "github": "https://github.com/Bhanu-2005",
+            "email": "mailto:sangulabhanuteja@gmail.com",
+            "phone": "tel:+919391145727"
+        }
+    },
+    "about": {
+        "objective": "Detail-oriented Data Scientist with a strong foundation in data manipulation, visualization, and strategic problem-solving. Proven ability to leverage tools like Python, SQL, and Power BI to extract actionable insights and drive data-informed decision-making. Adept at translating complex datasets into scalable solutions.",
+        "education": [
+            {
+                "degree": "Bachelor of Technology in Computer Science and Engineering",
+                "school": "Lovely Professional University, Phagwara, Punjab",
+                "details": "Aug 2023 \u2013 Present | CGPA: 6.34"
+            },
+            {
+                "degree": "Intermediate (PCM)",
+                "school": "Narayana Junior College, Rajahmundry, Andhra Pradesh",
+                "details": "Jun 2021 \u2013 Jul 2023 | Percentage: 80%"
+            },
+            {
+                "degree": "Matriculation",
+                "school": "Narayana Olympiad School, Rajahmundry, Andhra Pradesh",
+                "details": "Mar 2020 \u2013 Apr 2021 | Percentage: 98.9%"
+            }
+        ],
+        "softSkills": [
+            "Adaptability",
+            "Time Management",
+            "Team Player"
+        ],
+        "certifications": [
+            "Legacy Responsive Web Design V8 Certification",
+            "Build Generative AI Apps and Solutions with No- Code Tools",
+            "Computational Theory: Language Principle & Finite Automata Theory",
+            "Object Oriented Programming Using C++"
+        ],
+        "languages": [
+            "English",
+            "Telugu",
+            "Hindi"
+        ]
+    },
+    "detailedSkills": [
+        {
+            "title": "Data Analysis & Visualization",
+            "overview": "Proficient in analyzing complex datasets, creating structured relational data models, and formulating DAX-driven metrics to strengthen analytical precision.",
+            "tools": [
+                "Power BI",
+                "Excel",
+                "Data Pipelines"
+            ]
+        },
+        {
+            "title": "Machine Learning & Data Science",
+            "overview": "Skilled in leveraging Python frameworks for data manipulation, predictive modeling, and extracting valuable insights from raw data.",
+            "tools": [
+                "Python",
+                "NumPy",
+                "Pandas",
+                "Scikit-learn"
+            ]
+        },
+        {
+            "title": "Software Development",
+            "overview": "Experienced in object-oriented programming, modular design, and full-stack web development using modern frameworks and databases.",
+            "tools": [
+                "C++",
+                "Django",
+                "PostgreSQL",
+                "HTML/CSS"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "title": "Object Oriented Programming Trainee",
+            "company": "Bootcamp / Training",
+            "date": "June 2025 - July 2025",
+            "location": "Online",
+            "description": "Gained strong hands-on understanding of core OOP concepts including encapsulation, inheritance, polymorphism, and abstraction through practical C++ implementation. Engineered a fully functional Sudoku game in C++ using object-oriented principles, modular design, and structured gameplay flow.",
+            "skills": [
+                "C++",
+                "OOP",
+                "Game Logic",
+                "Problem Solving"
+            ]
+        }
+    ],
+    "contact": {
+        "email": "sangulabhanuteja@gmail.com",
+        "phone": "+91 9391145727",
+        "linkedin": "https://www.linkedin.com/in/bhanuteja9",
+        "github": "https://github.com/Bhanu-2005",
+        "location": "India"
+    }
+}
