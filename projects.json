@@ -2,6 +2,19 @@
     {
         "title": "Style hub Modern E-commerce Platform",
         "description": "Architected a full-stack e-commerce platform leveraging Django and PostgreSQL to facilitate seamless product exploration, cart operations, wish list handling, and simulated transactions. Designed responsive UI enhancements and implemented client-side filtering logic.",
+        "images": [
+            "https://github.com/user-attachments/assets/6eb9b4ed-4375-497a-aa91-0b3e49d6bb48",
+            "https://github.com/user-attachments/assets/e4aeea9a-12e8-4c79-b169-cef9671c3698",
+            "https://github.com/user-attachments/assets/aa3f010b-df24-4151-802a-23d753667613",
+            "https://github.com/user-attachments/assets/fa16aad2-046e-4cfb-b7ce-8a830fb2d808",
+            "https://github.com/user-attachments/assets/6f64e721-9c6c-47b7-b169-b3b58bdf6cef",
+            "https://github.com/user-attachments/assets/8688a47d-3cd4-4e30-a4b7-15707266f146",
+            "https://github.com/user-attachments/assets/3ae2d700-5303-4dca-a40a-5c367f41c8b8",
+            "https://github.com/user-attachments/assets/fdeb6e74-9d12-4b4b-9c57-24b4507251ad",
+            "https://github.com/user-attachments/assets/41d622ce-54f1-4155-a859-0cf4c39ccf33",
+            "https://github.com/user-attachments/assets/065c1e87-b05a-45f9-80c7-64cb0e949fd9",
+            "https://github.com/user-attachments/assets/344586f9-9422-48cc-97ed-9c6be322a92b"
+        ],
         "tech": ["Django", "PostgreSQL", "JavaScript", "HTML", "CSS"],
         "link": "https://github.com/Bhanu-2005",
         "icon": "fas fa-shopping-cart"
@@ -9,6 +22,11 @@
     {
         "title": "Meteorite Landing Data Dashboard",
         "description": "Executed comprehensive data examination of global meteorite records using Power BI to reveal chronological and spatial impact trends. Engineered data pipelines through Power Query, structured relational data models, and formulated DAX-driven metrics.",
+        "images": [
+            "ProjectImages/Meteorite_1.jpeg",
+            "ProjectImages/Meteorite_2.jpeg",
+            "ProjectImages/Meteorite_3.jpeg"
+        ],
         "tech": ["Power BI", "Power Query", "DAX"],
         "link": "https://github.com/Bhanu-2005",
         "icon": "fas fa-chart-bar"

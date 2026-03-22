@@ -76,54 +76,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// p5.js Particle Background (Only if p5 is loaded)
-if (typeof setup === 'undefined' && typeof p5 !== 'undefined') {
-    let canvas;
-    const particleContainer = document.getElementById('particles');
-
-    window.setup = function() {
-        if (!particleContainer) return;
-        canvas = createCanvas(windowWidth, windowHeight);
-        canvas.parent('particles');
-    }
-
-    let particles = [];
-    
-    window.draw = function() {
-        if (!particleContainer) return;
-        
-        const isLight = body.classList.contains('light-theme');
-        background(0, 0, 0, 10);
-        
-        for (let i = 0; i < 2; i++) {
-            let p = {
-                x: random(width),
-                y: random(height),
-                vx: random(-1, 1),
-                vy: random(-1, 1),
-                color: isLight ? color(124, 58, 237, 100) : color(167, 139, 250, 100)
-            };
-            particles.push(p);
-        }
-        
-        for (let i = particles.length - 1; i >= 0; i--) {
-            let p = particles[i];
-            p.x += p.vx;
-            p.y += p.vy;
-            fill(p.color);
-            noStroke();
-            ellipse(p.x, p.y, 5, 5);
-            if (p.x < 0 || p.x > width || p.y < 0 || p.y > height) {
-                particles.splice(i, 1);
-            }
-        }
-    }
-
-    window.windowResized = function() {
-        if (!particleContainer) return;
-        resizeCanvas(windowWidth, windowHeight);
-    }
-}
+// Particle Background functionality removed for static black theme.
 // ... (previous code)
 
 // ==========================================
@@ -134,10 +87,7 @@ if (typeof setup === 'undefined' && typeof p5 !== 'undefined') {
 // Data Loading & Rendering
 // ==========================================
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadData();
-    loadProjects();
-});
+// Removed obsolete loadData and loadProjects calls
 
 async function initApp() {
     try {
@@ -399,17 +349,52 @@ function renderProjects(projects) {
     const containers = document.querySelectorAll('.projects-grid');
     
     containers.forEach(container => {
-        container.innerHTML = projects.map(project => `
-            <a href="${project.link || '#'}" target="_blank" class="project-card">
-                <h3 class="project-title">${project.title}</h3>
+        container.innerHTML = projects.map(project => {
+            let imagesHtml = '';
+            if (project.images && project.images.length > 0) {
+                const imagesGallery = project.images.map(img => `
+                    <div class="carousel-slide">
+                        <img src="${img}" alt="${project.title} screenshot" class="project-gallery-img" loading="lazy">
+                    </div>
+                `).join('');
+                
+                imagesHtml = `
+                <div class="project-media-container">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="browser-url">stylehub.app</div>
+                        <div class="browser-spacer"></div>
+                    </div>
+                    <div class="project-carousel">
+                        ${imagesGallery}
+                    </div>
+                    <div class="carousel-instruction">
+                        <i class="fas fa-arrows-alt-h"></i> Swipe to see more
+                    </div>
+                </div>
+                `;
+            }
+            
+            return `
+            <div class="project-card">
+                <div class="project-header-row">
+                    <h3 class="project-title">${project.title}</h3>
+                    ${project.link && project.link !== '#' ? `<a href="${project.link}" target="_blank" class="project-link-btn"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                </div>
                 <div class="project-description">
                     <p><span>Description:</span> ${project.description}</p>
                 </div>
+                ${imagesHtml}
                 <div class="project-tech">
                     ${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                 </div>
-            </a>
-        `).join('');
+            </div>
+            `;
+        }).join('');
     });
 }
     
@@ -496,7 +481,8 @@ function initAnimatedList() {
     const grids = document.querySelectorAll('.projects-grid, .skills-grid, .categories-grid');
     
     grids.forEach(grid => {
-        // ...
+        const items = grid.children;
+        if (!items || items.length === 0) return;
         
         gsap.from(items, {
             scrollTrigger: {
@@ -527,7 +513,7 @@ function initAnimatedList() {
     }
 }
 
-// 4. 3D Orb (Three.js)
+// 4. 3D Orb (Three.js) - Restored for Solid Black Theme
 function initOrb() {
     if (typeof THREE === 'undefined') return;
 
@@ -541,13 +527,14 @@ function initOrb() {
     orbContainer.style.position = 'absolute';
     orbContainer.style.top = '0';
     orbContainer.style.right = '0'; 
+    
     // Responsive width logic
     const setContainerSize = () => {
         if (window.innerWidth < 768) {
             orbContainer.style.width = '100%';
-            orbContainer.style.height = '50%'; // Limit height on mobile to not cover everything
-            orbContainer.style.top = 'auto'; // Bottom align or keep top? Let's try top but limited height
-            orbContainer.style.bottom = '0'; // Actually, let's put it at the bottom/center for mobile
+            orbContainer.style.height = '100%'; 
+            orbContainer.style.top = '0';
+            orbContainer.style.bottom = 'auto';
         } else {
             orbContainer.style.width = '50%';
             orbContainer.style.height = '100%';
@@ -555,18 +542,10 @@ function initOrb() {
             orbContainer.style.bottom = 'auto';
         }
     };
-    
-    // Initial sizes
-    if (window.innerWidth < 768) {
-         orbContainer.style.width = '100%';
-         orbContainer.style.height = '100%'; // Full background on mobile, but z-index is low
-    } else {
-         orbContainer.style.width = '50%';
-         orbContainer.style.height = '100%';
-    }
+    setContainerSize();
     
     orbContainer.style.zIndex = '0'; 
-    orbContainer.style.opacity = '0.6';
+    orbContainer.style.opacity = '0.7'; /* Slightly increased for better visibility on pure black */
     orbContainer.style.pointerEvents = 'none'; 
     
     heroSection.insertBefore(orbContainer, heroSection.firstChild);
@@ -582,13 +561,13 @@ function initOrb() {
     // Create Orb
     const geometry = new THREE.IcosahedronGeometry(2, 2); 
     const isLight = document.body.classList.contains('light-theme');
-    const color = isLight ? 0x7c3aed : 0xa78bfa;
+    const accentColor = isLight ? 0x7c3aed : 0xa78bfa;
 
     const material = new THREE.MeshBasicMaterial({ 
-        color: color,
+        color: accentColor,
         wireframe: true,
         transparent: true,
-        opacity: 0.3
+        opacity: 0.35 /* Slightly more visible */
     });
 
     const sphere = new THREE.Mesh(geometry, material);
@@ -607,13 +586,7 @@ function initOrb() {
 
     // Handle Resize
     window.addEventListener('resize', () => {
-        // Update container style based on new width
-        if (window.innerWidth < 768) {
-             orbContainer.style.width = '100%';
-        } else {
-             orbContainer.style.width = '50%';
-        }
-
+        setContainerSize();
         const width = orbContainer.offsetWidth;
         const height = orbContainer.offsetHeight;
         renderer.setSize(width, height);
